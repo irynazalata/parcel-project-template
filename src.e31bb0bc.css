@@ -1016,6 +1016,7 @@ p {
 @media screen and (min-width: 1200px) {
   .button-buy-now {
     right: 115px;
+    top: 37px;
   }
 }
 
