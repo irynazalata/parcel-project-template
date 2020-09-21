@@ -352,7 +352,7 @@ p {
     padding-right: 34px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .button-primary {
     min-width: 162px;
     padding-top: 15px;
@@ -382,7 +382,7 @@ p {
     padding-right: 38px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .button-secondary {
     min-width: 161px;
     padding-top: 16px;
@@ -491,7 +491,7 @@ p {
     padding-right: 15px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .hero-button-primary {
     min-width: 63px;
     padding-top: 9px;
@@ -524,7 +524,7 @@ p {
     padding-right: 14px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .hero-button-secondary {
     min-width: 83px;
     padding-top: 9px;
@@ -565,7 +565,7 @@ p {
     padding-right: 38px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .button-process {
     font-size: 14px;
     line-height: 1.29;
@@ -581,6 +581,8 @@ p {
 }
 
 .numbers {
+  position: relative;
+  z-index: 1;
   text-align: right;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -649,7 +651,7 @@ p {
   text-align: center;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #ffa5ba;
+  color: #885561;
 }
 .section-title span {
   font-family: Titan One, sans-serif;
@@ -701,7 +703,7 @@ p {
     font-size: 30px;
     line-height: 1.13;
     font-weight: 400;
-    color: #ffa5ba;
+    color: #885561;
   }
   .section-title span {
     font-size: 58px;
@@ -718,7 +720,7 @@ p {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 3;
   width: 100%;
 }
 
@@ -727,10 +729,22 @@ p {
 }
 
 .page-header .container {
+  position: relative;
   padding-top: 6px;
   padding-left: 20px;
   padding-right: 20px;
   width: 100%;
+  max-width: 320px;
+}
+@media screen and (min-width: 768px) {
+  .page-header .container {
+    max-width: 768px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .page-header .container {
+    max-width: 1200px;
+  }
 }
 
 .button-buy-now {
@@ -785,6 +799,7 @@ p {
 
 @media screen and (min-width: 768px) {
   .page-header .container {
+    max-width: 768px;
     display: flex;
     padding-top: 37px;
     padding-left: 34px;
@@ -849,7 +864,7 @@ p {
 }
 @media screen and (max-width: 1199px) and (min-width: 768px) and (max-width: 1199px) {
   .header-menu {
-    height: 403px;
+    height: 402px;
   }
 }
 @media screen and (max-width: 1199px) {
@@ -861,6 +876,7 @@ p {
 }
 @media screen and (min-width: 1200px) {
   .page-header .container {
+    max-width: 1200px;
     padding-left: 46px;
     display: flex;
     flex-direction: row;
@@ -894,24 +910,29 @@ p {
 }
 .hero {
   position: relative;
+  background-color: #ffb8c9;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 320px;
+  margin: 0 auto;
   padding-top: 193px;
   padding-left: 20px;
   padding-bottom: 160px;
-  background-color: #ffb8ca;
-  z-index: -1;
   background-image: url(/icecream1x.91590785.png), url(/ellipse_ice1x.7e2bf0c3.png);
   background-size: 171px, 284px;
   background-position: bottom right 32px, bottom 75px right;
   background-repeat: no-repeat;
 }
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 320px), screen and (min-resolution: 192dpi) and (min-width: 320px), screen and (min-resolution: 2dppx) and (min-width: 320px) {
-  .hero {
+  .hero-content {
     background-image: url(/icecream@2x.f0a31c29.png), url(/ellipse_ice@2x.206c187b.png);
   }
 }
 @media screen and (min-width: 768px) {
-  .hero {
-    padding-left: 34px;
+  .hero-content {
+    max-width: 768px;
     padding-right: 34px;
     padding-top: 102px;
     padding-bottom: 59px;
@@ -922,12 +943,13 @@ p {
   }
 }
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px), screen and (min-resolution: 192dpi) and (min-width: 768px), screen and (min-resolution: 2dppx) and (min-width: 768px) {
-  .hero {
+  .hero-content {
     background-image: url(/girl@2x.a3b3a119.png), url(/icecream@2x.aa95fbf7.png), url(/ellipse_ice@2x.8df8ffda.png), url(/milk@2x.4eb707dd.png);
   }
 }
 @media screen and (min-width: 1200px) {
-  .hero {
+  .hero-content {
+    max-width: 1200px;
     padding-left: 115px;
     padding-right: 97px;
     padding-top: 171px;
@@ -938,19 +960,14 @@ p {
   }
 }
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 1200px), screen and (min-resolution: 192dpi) and (min-width: 1200px), screen and (min-resolution: 2dppx) and (min-width: 1200px) {
-  .hero {
+  .hero-content {
     background-image: url(/girl@2x.ecc65553.png), url(/icecream@2x.46da3df9.png), url(/ellipse_ice@2x.ecac8519.png), url(/milk@2x.8cf3af82.png);
   }
-}
-
-.hero-content {
-  position: relative;
 }
 
 .hero-title {
   width: 218px;
   margin-bottom: 19px;
-  z-index: 1;
   position: relative;
 }
 @media screen and (min-width: 768px) {
@@ -967,7 +984,7 @@ p {
 
 .hero-button-primary,
 .hero-button-secondary {
-  z-index: 1;
+  z-index: 2;
   position: relative;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -1055,12 +1072,18 @@ p {
 .hero-statistics-list {
   list-style: none;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 102px;
+  right: 44px;
 }
 @media screen and (max-width: 767px) {
   .hero-statistics-list {
     display: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .hero-statistics-list {
+    top: 156px;
+    right: 115px;
   }
 }
 
@@ -1352,7 +1375,6 @@ p {
     padding-bottom: 145px;
     display: flex;
     flex-direction: column;
-    z-index: -2;
   }
 
   .bg-img {
@@ -1580,7 +1602,6 @@ p {
   }
 
   .bg-img {
-    z-index: -1;
     position: absolute;
     top: 342px;
     height: 534px;
@@ -1625,6 +1646,8 @@ p {
 }
 @media screen and (min-width: 1200px) {
   .container-description {
+    position: relative;
+    z-index: 1;
     margin-left: 74px;
   }
 }
@@ -1947,7 +1970,7 @@ p {
   font-size: 12px;
   line-height: 1.86;
   font-weight: 500;
-  color: #ffa5ba;
+  color: #885561;
 }
 
 .working-list-item + .working-list-item {
@@ -2191,7 +2214,7 @@ p {
   font-weight: 400;
   font-family: Titan One;
   text-transform: uppercase;
-  color: #ffa5ba;
+  color: #885561;
 }
 
 .title-text {
@@ -2221,7 +2244,7 @@ p {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background-color: #ffa5ba;
+  background-color: #885561;
   display: flex;
   justify-content: center;
   align-items: center;
