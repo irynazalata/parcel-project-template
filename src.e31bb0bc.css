@@ -2974,6 +2974,7 @@ p {
   box-sizing: border-box;
   border-radius: 24px;
   transition: all 250ms linear 150ms;
+  height: 522px;
 }
 .modal:hover {
   filter: brightness(1.1);
