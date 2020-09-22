@@ -117,83 +117,28 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"js/script.js":[function(require,module,exports) {
+function backToTop() {
+  var _this = this;
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
+  var button = $('.back-to-top');
+  $(window).on('scroll', function () {
+    if ($(_this).scrollTop() >= 150) {
+      button.fadeIn();
+    } else {
+      button.fadeOut();
     }
-  }
-
-  return '/';
+  });
+  button.on('click', function (e) {
+    // e.preventDefault();
+    $('html'), animate({
+      scrollTop: 0
+    }, 1000);
+  });
 }
 
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"sass/main.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./ajax-loader.gif":[["ajax-loader.0841b913.gif","sass/ajax-loader.gif"],"sass/ajax-loader.gif"],"./fonts\\slick.eot":[["slick.da8efe09.eot","sass/fonts/slick.eot"],"sass/fonts/slick.eot"],"./fonts\\slick.woff":[["slick.60f7b7e2.woff","sass/fonts/slick.woff"],"sass/fonts/slick.woff"],"./fonts\\slick.ttf":[["slick.c5074a08.ttf","sass/fonts/slick.ttf"],"sass/fonts/slick.ttf"],"./fonts\\slick.svg":[["slick.9a3ed3e9.svg","sass/fonts/slick.svg"],"sass/fonts/slick.svg"],"D:\\projects_Go-IT\\Homework\\parcel-project-template\\src\\images\\ellipse.svg":[["ellipse.3e233546.svg","images/ellipse.svg"],"images/ellipse.svg"],"D:\\projects_Go-IT\\Homework\\parcel-project-template\\src\\images\\home.svg":[["home.941c208c.svg","images/home.svg"],"images/home.svg"],"./..\\images\\hero\\mobile\\icecream1x.png":[["icecream1x.91590785.png","images/hero/mobile/icecream1x.png"],"images/hero/mobile/icecream1x.png"],"./..\\images\\hero\\mobile\\ellipse_ice1x.png":[["ellipse_ice1x.7e2bf0c3.png","images/hero/mobile/ellipse_ice1x.png"],"images/hero/mobile/ellipse_ice1x.png"],"./..\\images\\hero\\mobile\\icecream@2x.png":[["icecream@2x.f0a31c29.png","images/hero/mobile/icecream@2x.png"],"images/hero/mobile/icecream@2x.png"],"./..\\images\\hero\\mobile\\ellipse_ice@2x.png":[["ellipse_ice@2x.206c187b.png","images/hero/mobile/ellipse_ice@2x.png"],"images/hero/mobile/ellipse_ice@2x.png"],"./..\\images\\hero\\tablet\\girl1x.png":[["girl1x.80b7b95b.png","images/hero/tablet/girl1x.png"],"images/hero/tablet/girl1x.png"],"./..\\images\\hero\\tablet\\icecream1x.png":[["icecream1x.61519e3b.png","images/hero/tablet/icecream1x.png"],"images/hero/tablet/icecream1x.png"],"./..\\images\\hero\\tablet\\ellipse_ice.png":[["ellipse_ice.2062a424.png","images/hero/tablet/ellipse_ice.png"],"images/hero/tablet/ellipse_ice.png"],"./..\\images\\hero\\tablet\\milk1x.png":[["milk1x.7d40fc07.png","images/hero/tablet/milk1x.png"],"images/hero/tablet/milk1x.png"],"./..\\images\\hero\\tablet\\girl@2x.png":[["girl@2x.a3b3a119.png","images/hero/tablet/girl@2x.png"],"images/hero/tablet/girl@2x.png"],"./..\\images\\hero\\tablet\\icecream@2x.png":[["icecream@2x.aa95fbf7.png","images/hero/tablet/icecream@2x.png"],"images/hero/tablet/icecream@2x.png"],"./..\\images\\hero\\tablet\\ellipse_ice@2x.png":[["ellipse_ice@2x.8df8ffda.png","images/hero/tablet/ellipse_ice@2x.png"],"images/hero/tablet/ellipse_ice@2x.png"],"./..\\images\\hero\\tablet\\milk@2x.png":[["milk@2x.4eb707dd.png","images/hero/tablet/milk@2x.png"],"images/hero/tablet/milk@2x.png"],"./..\\images\\hero\\desktop\\girl1x.png":[["girl1x.766a9a9f.png","images/hero/desktop/girl1x.png"],"images/hero/desktop/girl1x.png"],"./..\\images\\hero\\desktop\\icecream1x.png":[["icecream1x.74baf8c3.png","images/hero/desktop/icecream1x.png"],"images/hero/desktop/icecream1x.png"],"./..\\images\\hero\\desktop\\ellipse_ice.png":[["ellipse_ice.34ec40ec.png","images/hero/desktop/ellipse_ice.png"],"images/hero/desktop/ellipse_ice.png"],"./..\\images\\hero\\desktop\\milk1x.png":[["milk1x.a748701d.png","images/hero/desktop/milk1x.png"],"images/hero/desktop/milk1x.png"],"./..\\images\\hero\\desktop\\girl@2x.png":[["girl@2x.ecc65553.png","images/hero/desktop/girl@2x.png"],"images/hero/desktop/girl@2x.png"],"./..\\images\\hero\\desktop\\icecream@2x.png":[["icecream@2x.46da3df9.png","images/hero/desktop/icecream@2x.png"],"images/hero/desktop/icecream@2x.png"],"./..\\images\\hero\\desktop\\ellipse_ice@2x.png":[["ellipse_ice@2x.ecac8519.png","images/hero/desktop/ellipse_ice@2x.png"],"images/hero/desktop/ellipse_ice@2x.png"],"./..\\images\\hero\\desktop\\milk@2x.png":[["milk@2x.8cf3af82.png","images/hero/desktop/milk@2x.png"],"images/hero/desktop/milk@2x.png"],"./..\\images\\hero\\tablet\\ellipse1_1x.png":[["ellipse1_1x.8f797de7.png","images/hero/tablet/ellipse1_1x.png"],"images/hero/tablet/ellipse1_1x.png"],"./..\\images\\hero\\tablet\\ellipse1@2x.png":[["ellipse1@2x.6b9d2b90.png","images/hero/tablet/ellipse1@2x.png"],"images/hero/tablet/ellipse1@2x.png"],"./..\\images\\hero\\desktop\\ellipse1_1x.png":[["ellipse1_1x.dd11bfe2.png","images/hero/desktop/ellipse1_1x.png"],"images/hero/desktop/ellipse1_1x.png"],"./..\\images\\hero\\desktop\\ellipse1@2x.png":[["ellipse1@2x.1231f5ee.png","images/hero/desktop/ellipse1@2x.png"],"images/hero/desktop/ellipse1@2x.png"],"./..\\images\\products\\icon\\rondo.svg":[["rondo.e5ea8742.svg","images/products/icon/rondo.svg"],"images/products/icon/rondo.svg"],"./..\\images\\process\\mobile\\side_milk1x.png":[["side_milk1x.a043270d.png","images/process/mobile/side_milk1x.png"],"images/process/mobile/side_milk1x.png"],"./..\\images\\process\\mobile\\side_milk@2x.png":[["side_milk@2x.113182a1.png","images/process/mobile/side_milk@2x.png"],"images/process/mobile/side_milk@2x.png"],"./..\\images\\process\\desktop\\side_milk1x.png":[["side_milk1x.c7718a8b.png","images/process/desktop/side_milk1x.png"],"images/process/desktop/side_milk1x.png"],"./..\\images\\process\\desktop\\side_milk@2x.png":[["side_milk@2x.f41c056c.png","images/process/desktop/side_milk@2x.png"],"images/process/desktop/side_milk@2x.png"],"./..\\images\\icon-quotes.svg":[["icon-quotes.7bba01ec.svg","images/icon-quotes.svg"],"images/icon-quotes.svg"],"./..\\images\\cafes\\desktop\\cafes1x.png":[["cafes1x.bff17643.png","images/cafes/desktop/cafes1x.png"],"images/cafes/desktop/cafes1x.png"],"./..\\images\\cafes\\desktop\\cafes@2x.png":[["cafes@2x.6fafb6ed.png","images/cafes/desktop/cafes@2x.png"],"images/cafes/desktop/cafes@2x.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
-"use strict";
-
-require("./sass/main.scss");
-},{"./sass/main.scss":"sass/main.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+backToTop();
+},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -397,5 +342,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/src.e31bb0bc.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/script.js"], null)
+//# sourceMappingURL=/script.d573be0b.js.map

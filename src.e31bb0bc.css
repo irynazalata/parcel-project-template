@@ -106,6 +106,7 @@ p {
 .shake-little:hover,
 .shake-trigger:hover .shake-little {
   animation-play-state: running;
+  transition: all 0.25s linear;
 }
 
 @keyframes shake-little {
@@ -268,6 +269,7 @@ p {
   animation-duration: 100ms;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
+  transition: all 0.25s linear;
 }
 
 /* Slider */
@@ -402,6 +404,7 @@ p {
   outline: none;
   background: transparent;
   color: transparent;
+  transition: all 0.25s linear;
 }
 .slick-prev:hover:before, .slick-prev:focus:before,
 .slick-next:hover:before,
@@ -493,6 +496,7 @@ p {
 }
 .slick-dots li button:hover, .slick-dots li button:focus {
   outline: none;
+  transition: all 0.25s linear;
 }
 .slick-dots li button:before {
   position: absolute;
@@ -581,6 +585,7 @@ p {
 }
 .button-secondary:hover, .button-secondary:focus {
   background: #ecebeb;
+  transition: all 0.25s linear;
 }
 .button-buy-now {
   background-color: #ffffff;
@@ -610,6 +615,7 @@ p {
 }
 .button-buy-now:hover, .button-buy-now:focus {
   background: #ecebeb;
+  transition: all 0.25s linear;
 }
 .button-buy-burger {
   background-color: #ffffff;
@@ -639,6 +645,7 @@ p {
 }
 .button-buy-burger:hover, .button-buy-burger:focus {
   background: #ecebeb;
+  transition: all 0.25s linear;
 }
 
 .hero-button {
@@ -690,6 +697,7 @@ p {
 }
 .hero-button-primary:hover, .hero-button-primary:focus {
   background-color: #c7133e;
+  transition: all 0.25s linear;
 }
 .hero-button-secondary {
   background-color: #ffffff;
@@ -723,6 +731,7 @@ p {
 }
 .hero-button-secondary:hover, .hero-button-secondary:focus {
   background: #ecebeb;
+  transition: all 0.25s linear;
 }
 
 .button-process {
@@ -766,6 +775,7 @@ p {
 }
 .button-process:hover, .button-process:focus {
   background-color: #ecebeb;
+  transition: all 0.25s linear;
 }
 
 .circle-allways {
@@ -805,6 +815,7 @@ p {
 .circle:focus {
   -webkit-animation: pulsing 2s infinite;
   animation: pulsing 2s infinite;
+  transition: all 0.25s linear;
 }
 
 @-webkit-keyframes pulsing {
@@ -835,6 +846,44 @@ p {
     transform: scale(0.75, 0.75);
   }
 }
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 250px;
+  height: 50px;
+  width: 50px;
+  border-color: transparent;
+  border-radius: 50%;
+  background-color: #ffa5ba;
+  z-index: 99;
+}
+.back-to-top:hover, .back-to-top:focus {
+  filter: brightness(1.1);
+  outline: none;
+  transition: all 250ms linear;
+}
+.back-to-top::before, .back-to-top::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.back-to-top::before {
+  width: 5px;
+  height: 19px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  background-color: #ffffff;
+}
+.back-to-top::after {
+  width: 15px;
+  height: 15px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-top: 5px solid #ffffff;
+  border-left: 5px solid #ffffff;
+}
+
 .numbers {
   position: relative;
   z-index: 1;
@@ -1051,6 +1100,7 @@ p {
 }
 .site-nav-list-link:hover, .site-nav-list-link:focus {
   color: #d41443;
+  transition: all 0.25s linear;
 }
 
 @media screen and (min-width: 768px) {
@@ -1070,7 +1120,8 @@ p {
     z-index: 1;
     background: transparent;
     border-color: transparent;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.7s ease;
+    transition-delay: 0s;
   }
 }
 @media screen and (max-width: 1199px) and (min-width: 768px) and (max-width: 1199px) {
@@ -1114,7 +1165,8 @@ p {
     opacity: 0;
     visibility: hidden;
     box-shadow: -8px 0px 20px rgba(0, 0, 0, 0.25);
-    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 0.7s;
+    transform: translateY(-100%);
   }
 }
 @media screen and (max-width: 1199px) and (min-width: 768px) and (max-width: 1199px) {
@@ -1126,6 +1178,8 @@ p {
   .header-menu.is-open {
     opacity: 1;
     visibility: visible;
+    transform: translateY(0%);
+    transition: 0.7s;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -1412,6 +1466,7 @@ p {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   transform-origin: bottom center;
+  transition: all 0.25s linear;
 }
 
 @keyframes spin {
@@ -1467,7 +1522,7 @@ p {
 }
 
 .product-cataloge-item {
-  padding-top: 165px;
+  padding-top: 161px;
   padding-bottom: 41px;
   padding-left: 41px;
   padding-right: 39px;
@@ -1498,8 +1553,8 @@ p {
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .product-cataloge-item {
-    padding-top: 156px;
-    padding-bottom: 41px;
+    padding-top: 152px;
+    padding-bottom: 40px;
     padding-left: 11px;
     padding-right: 11px;
     width: 220px;
@@ -1511,7 +1566,7 @@ p {
 }
 @media screen and (min-width: 1200px) {
   .product-cataloge-item {
-    padding-top: 219px;
+    padding-top: 163px;
     padding-bottom: 41px;
     padding-left: 44px;
     padding-right: 44px;
@@ -1550,6 +1605,16 @@ p {
     line-height: 1.15;
     font-weight: 400;
   }
+}
+
+.product-cataloge-item:hover .product-name::after,
+.product-cataloge-item:focus .product-name::after {
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform-origin: center;
+  transition: all 0.25s linear;
 }
 
 .product-description {
@@ -1612,11 +1677,20 @@ p {
   background-color: #ffffff;
   border-radius: 50%;
   border: 1px solid transparent;
+  transition-property: background-color, transform;
+  transition-duration: 500ms;
+  transition-timing-function: linear;
+  transition-delay: 0ms;
 }
 .products-button-icon .products-button-icon {
   fill: #d41443;
   width: 13px;
   height: 11px;
+}
+.products-button-icon:hover, .products-button-icon:focus {
+  background-color: #fcf5f7;
+  transform: rotate(180deg);
+  transition: all 0.25s linear;
 }
 
 .product-picture {
@@ -1641,6 +1715,7 @@ p {
   .product-picture {
     width: 335px;
     height: 335px;
+    transform: translate(-50%, -65%);
   }
 }
 
@@ -2510,6 +2585,7 @@ p {
 .link:hover,
 .link:focus {
   background-color: #d41443;
+  transition: all 0.25s linear;
 }
 
 .contact-text {
