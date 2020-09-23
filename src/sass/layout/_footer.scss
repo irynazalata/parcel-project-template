@@ -58,7 +58,7 @@
   display: inline;
   text-align: right;
 }
-.conteiner-copyright {
+.container-copyright {
   max-width: 100%;
   border-top: 1px solid #e1e1e1;
   margin-top: 43px;
@@ -109,7 +109,7 @@
   .contact {
     @include font(14px, 1.86, 700);
   }
-  .conteiner-copyright {
+  .container-copyright {
     margin-top: 91px;
   }
   .copyright {
@@ -143,7 +143,7 @@
     padding-top: 9px;
     padding-bottom: 9px;
   }
-  .conteiner-copyright {
+  .container-copyright {
     margin-top: 97px;
   }
 }
